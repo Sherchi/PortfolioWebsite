@@ -16,7 +16,7 @@ const links = [
 
 export default function SiteNavigation() {
   const pathname = usePathname();
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
