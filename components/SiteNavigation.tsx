@@ -23,7 +23,7 @@ export default function SiteNavigation() {
     const currentTheme =
       savedTheme === "light" || savedTheme === "dark"
         ? savedTheme
-        : "dark";
+        : "light";
 
     document.documentElement.setAttribute("data-theme", currentTheme);
     setIsLight(currentTheme === "light");
@@ -31,7 +31,7 @@ export default function SiteNavigation() {
 
   const handleToggle = () => {
     const currentTheme =
-      document.documentElement.getAttribute("data-theme") ?? "dark";
+      document.documentElement.getAttribute("data-theme") ?? "light";
 
     const nextTheme = currentTheme === "light" ? "dark" : "light";
 
