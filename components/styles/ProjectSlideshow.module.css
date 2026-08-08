@@ -1,0 +1,115 @@
+.slideshow {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+
+.slideImage {
+  object-fit: contain;
+  background: var(--surface-raised);
+  animation: slideFade 240ms ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 7, 9, 0.9),
+    transparent 15%
+  );
+  pointer-events: none;
+}
+
+.caption {
+  position: absolute;
+  right: 3rem;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+}
+
+.slideLabel {
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.slideCaption {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(5, 7, 9, 0.75);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.control:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.previous {
+  left: 0.65rem;
+}
+
+.next {
+  right: 0.65rem;
+}
+
+.dots {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 0;
+  cursor: pointer;
+}
+
+.activeDot {
+  width: 1rem;
+  background: var(--accent);
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slideImage {
+    animation: none;
+  }
+}

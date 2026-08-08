@@ -1,0 +1,124 @@
+.siteHeader {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 50;
+  padding-inline: 1rem;
+  pointer-events: none;
+}
+
+.siteNav {
+  display: flex;
+  width: min(100%, 73.75rem);
+  min-height: 4rem;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  box-shadow: var(--card-shadow);
+  padding: 0.5rem 0.65rem;
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+}
+
+.siteName {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--paper);
+  font-size: 0.86rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.brandMark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-soft), color-mix(in srgb, var(--accent-blue) 10%, transparent));
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.navLinks::-webkit-scrollbar { display: none; }
+
+.navLink {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 auto;
+  border-radius: 0.55rem;
+  padding: 0.58rem 0.72rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.navLink:hover, .navLinkActive { color: var(--paper); }
+
+.navMarker {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.55rem;
+  background: var(--accent-soft);
+}
+
+.resumeLink {
+  flex: 0 0 auto;
+  margin-left: 0.35rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.55rem;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  padding: 0.56rem 0.72rem;
+  color: var(--body);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+.resumeLink:hover { border-color: var(--accent); color: var(--accent); }
+
+.themeToggle {
+  display: grid;
+  flex: 0 0 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+.themeToggle:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.themeIcon { display: block; width: 0.95rem; height: 0.95rem; }
+
+@media (max-width: 760px) {
+  .siteNameText { display: none; }
+  .siteNav { gap: 0.5rem; }
+  .resumeLink { display: none; }
+}
+
+@media (max-width: 480px) {
+  .siteHeader { top: 0.45rem; padding-inline: 0.5rem; }
+  .siteNav { min-height: 3.5rem; padding: 0.35rem 0.4rem; }
+  .brandMark, .themeToggle { width: 2rem; height: 2rem; flex-basis: 2rem; }
+  .navLink { padding: 0.5rem 0.58rem; font-size: 0.7rem; }
+}

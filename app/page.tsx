@@ -1,69 +1,136 @@
-import Image from "next/image";
+import ProjectCaseStudy from "@/components/ProjectCaseStudy";
+import HomePreviewGrid from "@/components/HomePreviewGrid";
+import HomeTechStack from "@/components/HomeTechStack";
+import { otaSentinelHomeSlides } from "@/data/otaSentinelSlides";
+import {
+  NumberedSection,
+  PageHero,
+  PortfolioPage,
+  SplitCta,
+  SummaryList,
+} from "@/components/Portfolio";
+
+const areasOfWork = [
+  {
+    title: "Full-stack development",
+    description:
+      "User-facing features, backend services, APIs, permissions and maintainable production code.",
+  },
+  {
+    title: "Machine learning",
+    description:
+      "Anomaly detection, deep learning, feature engineering and experimental evaluation.",
+  },
+  {
+    title: "Secure systems",
+    description:
+      "Automotive cybersecurity, network security and software systems designed around practical threat models.",
+  },
+];
+
+const technologies = [
+  { label: "Python", mark: "Py" },
+  { label: "TensorFlow", mark: "TF" },
+  { label: "PyTorch", mark: "PT" },
+  { label: "scikit-learn", mark: "SK" },
+  { label: "React", mark: "⚛" },
+  { label: "Java", mark: "Jv" },
+  { label: "Spring", mark: "Sp" },
+  { label: "CUDA", mark: "Cu" },
+  { label: "SQL", mark: "DB" },
+  { label: "AWS", mark: "AWS" },
+];
+
+const previews = [
+  {
+    eyebrow: "Experience",
+    title: "Software development grounded in real product work.",
+    items: [
+      {
+        title: "Intellijoint Surgical",
+        body: "Full-stack development using React, Java and Spring, including application permissions, API protections and collaborative product features.",
+      },
+      {
+        title: "Western University",
+        body: "Graduate research in machine learning, automotive software security and anomaly detection.",
+      },
+    ],
+    link: { href: "/experience", label: "View experience" },
+  },
+  {
+    eyebrow: "Research",
+    title: "Automotive OTA security and anomaly detection.",
+    items: [
+      {
+        title: "OTArmor",
+        body: "Securing Automotive Over-the-Air Updates Against Malware Using Generative Modeling, published at CSNet 2025.",
+      },
+    ],
+    link: { href: "/research", label: "View research and conferences" },
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <PortfolioPage>
+      <PageHero
+        eyebrow="Software Developer · Ontario, Canada"
+        title="Darwin Liao"
+        aside={
+          <SummaryList
+            items={[
+              { label: "M.Sc. Computer Science", value: "Western University" },
+              {
+                label: "Areas of focus",
+                value: "Full-stack systems, ML, Network Analysis, and cybersecurity",
+              },
+              {
+                label: "Looking for",
+                value: "Early-career software development roles",
+              },
+            ]}
+          />
+        }
+        actions={[
+          { href: "/projects", label: "Explore my work" , muted: true},
+          { href: "/research", label: "Read my research", muted: true },
+        ]}
+      />
+
+      <HomeTechStack items={technologies} />
+
+      <ProjectCaseStudy
+        category="Featured project"
+        number="01"
+        overline="Master's thesis project"
+        title="OTA-Sentinel"
+        description="A pre-installation anomaly-screening framework designed to examine files inside automotive infotainment updates before installation is allowed to proceed."
+        details={[
+          { label: "Problem", value: "Signed updates may still contain suspicious files" },
+          { label: "Approach", value: "Static analysis and unsupervised learning" },
+          { label: "Platforms", value: "Linux-based IVI and Android Automotive" },
+          { label: "Built with", value: "Python, TensorFlow and scikit-learn" },
+        ]}
+        technologies="Python / TensorFlow / scikit-learn / HDF5 / CUDA"
+        action={{ href: "/projects", label: "View the full project", muted: true }}
+        visual={{
+          slides: otaSentinelHomeSlides,
+        }}
+      />
+
+      <NumberedSection
+        eyebrow="Areas of work"
+        title="From application code to research systems."
+        items={areasOfWork}
+      />
+
+      <HomePreviewGrid panels={previews} />
+
+      <SplitCta
+        eyebrow="Contact"
+        title="Interested in working together?"
+        action={{ href: "mailto:darwinliao@yahoo.ca", label: "Send me an email", muted: true }}
+      />
+    </PortfolioPage>
   );
 }
