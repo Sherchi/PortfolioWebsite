@@ -123,8 +123,8 @@ const projects: ProjectCaseStudyProps[] = [
     technologies: "Typescript/ Python / REST / AWS EC2 / Git / Next.js / React / Tailwind",
     accent: "amber",
     action: {
-      href: "",
-      label: "Visit Project Lumi (Currently offline)",
+      href: "https://projectlumi.space/",
+      label: "Visit Project Lumi (Up until Aug 29th!)",
     },
     visual: {
       imageSrc: "/Images/ERWebsite.png",
