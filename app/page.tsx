@@ -1,18 +1,11 @@
 import ProjectCaseStudy from "@/components/ProjectCaseStudy";
-<<<<<<< HEAD
 import HomePreviewGrid from "@/components/HomePreviewGrid";
 import HomeTechStack from "@/components/HomeTechStack";
 import { otaSentinelHomeSlides } from "@/data/otaSentinelSlides";
-=======
->>>>>>> fe047d0 (Update)
 import {
   NumberedSection,
   PageHero,
   PortfolioPage,
-<<<<<<< HEAD
-=======
-  PreviewGrid,
->>>>>>> fe047d0 (Update)
   SplitCta,
   SummaryList,
 } from "@/components/Portfolio";
@@ -35,7 +28,6 @@ const areasOfWork = [
   },
 ];
 
-<<<<<<< HEAD
 const technologies = [
   { label: "Python", mark: "Py" },
   { label: "TensorFlow", mark: "TF" },
@@ -49,8 +41,6 @@ const technologies = [
   { label: "AWS", mark: "AWS" },
 ];
 
-=======
->>>>>>> fe047d0 (Update)
 const previews = [
   {
     eyebrow: "Experience",
