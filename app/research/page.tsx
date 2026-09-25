@@ -108,7 +108,7 @@ export default function ResearchPage() {
     <PortfolioPage>
       <PageHero
         eyebrow="Research and publications"
-        title="PLACEHOLDER AAAAAAAAAAAAAAAAA"
+        title="Studying what happens after an update is trusted."
         aside="My research examines how static analysis and machine learning can help identify suspicious files inside automotive software updates before installation."
       />
 
