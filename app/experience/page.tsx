@@ -11,7 +11,7 @@ import {
 export const metadata = {
   title: "Experience | Darwin Liao",
   description:
-    "PLACEHOLDER AAAAAAAAAAAAAAAAA",
+    "Software development, research and engineering experience from Darwin Liao.",
 };
 
 const experiences: Experience[] = [
@@ -34,7 +34,7 @@ const experiences: Experience[] = [
   },
   {
     organization: "Intellijoint Surgical",
-    role: "Web Application Developer",
+    role: "Software Developer",
     period: "2022–2023",
     location: "Kitchener, Ontario",
     summary:
